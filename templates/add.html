@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加</title>
+</head>
+<body>
+    <h2>添加部门</h2>
+    <hr>
+    <p>
+        {% for err in errors %}
+        <div style="color: red; font-size: 12px;">{{ err }}</div>
+        {% endfor %}
+    </p>
+    <form action="/hrs/add" method="post">
+        {% csrf_token %}
+{#        {{ f.number }}#}
+        <table>
+        {{ f.as_table }}
+        </table>
+        <input type="submit" value="添加">
+    </form>
+</body>
+</html>
